@@ -1,10 +1,12 @@
 import uvicorn
 from fastapi import FastAPI
 from routes.users_routes import user_router
+from routes.file_routes import file_router
 
 app = FastAPI()
 
 app.include_router( user_router , prefix="/users")
+app.include_router( file_router , prefix="/file")
 
 
 from fastapi.middleware.cors import CORSMiddleware
